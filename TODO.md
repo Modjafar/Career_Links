@@ -65,3 +65,12 @@
 
 ## Backend Status: ✅ COMPLETE
 - Models, Controllers, Routes, Middleware, Config, Utils all done
+
+## Phase 6: React Router Future Flags Fix ✅ COMPLETE
+- [x] Fix `frontend/src/main.jsx` - Added `v7_startTransition` and `v7_relativeSplatPath` future flags to BrowserRouter
+- [x] Verify warnings are resolved in browser console
+
+## Phase 7: Database Seeding ✅ COMPLETE
+- [x] Create `backend/utils/seedData.js` - Seed script with 40 sample records
+- [x] Run seed script - Successfully inserted 30 opportunities + 10 exams
+- [x] Verify API endpoints return data - All endpoints confirmed working

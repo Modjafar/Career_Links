@@ -23,10 +23,29 @@ connectDB();
 // Middleware
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
-app.use(cors({
-    origin: config.FRONTEND_URL,
+const corsOptions = {
+    origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+
+        // In development, allow any localhost origin
+        if (config.NODE_ENV === 'development' &&
+            (origin.startsWith('http://localhost:') || origin.startsWith('https://localhost:'))) {
+            return callback(null, true);
+        }
+
+        // Check against configured frontend URL
+        if (origin === config.FRONTEND_URL) {
+            return callback(null, true);
+        }
+
+        callback(new Error('Not allowed by CORS'));
+    },
     credentials: true,
-}));
+};
+
+app.use(cors(corsOptions));
+
 
 // Health check route
 app.get('/api/health', (req, res) => {
