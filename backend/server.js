@@ -81,6 +81,7 @@ app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
     console.log(`📝 API Documentation: http://localhost:${PORT}/api`);
     console.log(`🌍 Environment: ${config.NODE_ENV}`);
+    console.log(`💡 Run 'npm run seed' to populate database with opportunities`);
 });
 
 export default app;

@@ -13,12 +13,12 @@ const opportunitySchema = new mongoose.Schema(
         },
         type: {
             type: String,
-            enum: ['Job', 'Internship', 'Course'],
+            enum: ['Job', 'Internship', 'Course', 'Exam'],
             required: [true, 'Please specify the opportunity type'],
         },
         category: {
             type: String,
-            enum: ['IT', 'Management', 'Finance', 'E-commerce', 'Government', 'English Learning', 'Other'],
+            enum: ['IT', 'Management', 'Finance', 'E-commerce', 'Government', 'English Learning', 'Education', 'Other'],
             required: [true, 'Please specify a category'],
         },
         description: {

@@ -31,7 +31,7 @@ export const config = {
     FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:5173',
 
     // Pagination
-    ITEMS_PER_PAGE: parseInt(process.env.ITEMS_PER_PAGE) || 10,
+    ITEMS_PER_PAGE: parseInt(process.env.ITEMS_PER_PAGE) || 12,
 };
 
 export default config;
